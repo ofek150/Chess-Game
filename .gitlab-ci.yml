@@ -1,0 +1,96 @@
+image: alpine
+
+############################################
+# gitlab-ci.yml for Ex7-8 - Chess Project  #
+############################################
+
+stages:
+  - build-file-verifier
+  - files-verifier
+  - verify-uml
+  - submission-date-verifier
+
+BuildFilesVerifier:
+  stage: build-file-verifier
+  before_script:
+    - apk update
+    - apk add git
+    - apk add go
+    - apk add build-base gcc abuild binutils
+  script:
+    - git clone https://gitlab.com/exercisetests/verifysubmittedfiles.git
+    - cd verifysubmittedfiles
+    - go build .
+    - mv filesverifier ..
+    - cd ..
+
+    - git clone https://gitlab.com/exercisetests/valgrindvarifier.git
+    - cd valgrindvarifier
+    - g++ ValgrindVarifier.cpp -o valgrindverifier
+    - mv valgrindverifier ..
+    - cd ..
+
+    - git clone https://gitlab.com/exercisetests/ex7-8.git
+    - cd ex7-8
+    - mv PreSubmissionChecker.txt ..
+    - mv PostSubmissionChecker.txt ..
+    - cd ..
+  artifacts:
+    paths:
+      - filesverifier
+      - valgrindverifier
+      - PreSubmissionChecker.txt
+      - PostSubmissionChecker.txt
+
+Verify Submission:
+  stage: files-verifier
+  needs:
+    - job: BuildFilesVerifier
+  script:
+    - echo "Verifying .gitignore..."
+    - ./filesverifier PreSubmissionChecker.txt 5
+    - echo "Gitignore files exists"
+    - echo "Verifying required VS files..."
+    - ./filesverifier PreSubmissionChecker.txt 2
+    - echo "Required VS files ok"
+    - echo "Verifying files that should not be submitted..."
+    - ./filesverifier PreSubmissionChecker.txt 4
+    - echo "Excluded files ok"
+
+
+Verify Necessary Exercise Files:
+  stage: files-verifier
+  needs:
+    - job: BuildFilesVerifier
+  script:
+    - ./filesverifier PostSubmissionChecker.txt 1
+  allow_failure: false
+
+Look for UML diagram:
+  stage: verify-uml
+  needs:
+    - job: BuildFilesVerifier
+  before_script:
+    - apk add git
+  script:
+    - echo "Verifying there is a UML diagram (uml.png) ..."
+    - ./filesverifier PreSubmissionChecker.txt 1 
+    - echo "Found uml.png -- ok"
+
+Verify Submission Date:
+  stage: submission-date-verifier
+  needs: []
+  before_script:
+    - apk update
+    - apk add git
+    - apk add go
+  script:
+    - git clone https://gitlab.com/exercisetests/submissionverifier.git
+    - cd submissionverifier
+    - mv submission_verifier.go ..
+    - cd ..
+    - git clone https://gitlab.com/exercisetests/submissionverifierfiles.git
+    - mv submission_verifier.go submissionverifierfiles
+    - cd submissionverifierfiles
+    - go run submission_verifier.go $CI_PROJECT_PATH $GITLAB_USER_ID
+  allow_failure: true
