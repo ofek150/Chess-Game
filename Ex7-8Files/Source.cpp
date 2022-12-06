@@ -7,6 +7,7 @@ in order to read and write information from and to the Backend
 #include "Pipe.h"
 #include <iostream>
 #include <thread>
+#include "GameManager.h"
 
 using std::cout;
 using std::endl;
@@ -49,12 +50,15 @@ void main()
 	strcpy_s(msgToGraphics, "rnbkqbnrpppppppp################################PPPPPPPPRNBKQBNR1"); // just example...
 	
 	p.sendMessageToGraphics(msgToGraphics);   // send the board string
+	GameManager gameManager(msgToGraphics);
+
 
 	// get message from graphics
 	string msgFromGraphics = p.getMessageFromGraphics();
 
 	while (msgFromGraphics != "quit")
 	{
+		gameManager.parseMsg(msgFromGraphics);
 		// should handle the string the sent from graphics
 		// according the protocol. Ex: e2e4           (move e2 to e4)
 		
@@ -69,10 +73,11 @@ void main()
 
 
 		// return result to graphics		
-		p.sendMessageToGraphics(msgToGraphics);   
+		p.sendMessageToGraphics(msgToGraphics);
 
 		// get message from graphics
 		msgFromGraphics = p.getMessageFromGraphics();
+		gameManager.parseMsg(msgFromGraphics);
 	}
 
 	p.close();
