@@ -22,7 +22,8 @@ public:
 	void changeTurn(); // Changes turn to the other player
 	void updateBoard(std::string);
 	bool checkWin();
-	Move parseMsg(std::string board);
+	Move parseMsg(std::string board); // Parses the pipe's message and returns a move
+	std::string boardToString() // composes the board string for the pipe
 
 };
 

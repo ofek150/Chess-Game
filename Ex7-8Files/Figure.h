@@ -8,7 +8,7 @@ class Figure
 public:
 	Figure(const std::string type);
 	~Figure();
-	virtual bool canMove(Board& board, Move move) = 0;
+	virtual bool canMove(const Board& board, const Move move) const = 0;
 protected:
 	const std::string type;//the type of the figure, changes only in the c'tor
 	bool moved;//true if figure did not move, else false

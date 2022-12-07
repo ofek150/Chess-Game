@@ -14,7 +14,7 @@ const Point& Move::getDest() const // getter for dest
     return this->dest;
 }
 
-const std::string Move::returnMoveStr() const
+std::string Move::returnMoveStr() const // Debug function
 {
     std::string moveStr =  "Src(" + std::to_string(this->src.getX()) + ", " + std::to_string(this->src.getY()) + ")-->" + "Dest(" + std::to_string(this->dest.getX()) + ", " + std::to_string(this->dest.getY()) + ")";
     return moveStr;

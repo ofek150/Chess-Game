@@ -12,6 +12,6 @@ public:
 	const Point& getSrc() const; // getter for src
 	const Point& getDest() const; // getter for dest
 
-	const std::string returnMoveStr() const;
+	std::string returnMoveStr() const; // Debug function
 };
 
