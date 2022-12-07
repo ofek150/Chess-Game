@@ -48,6 +48,18 @@
     <ClInclude Include="..\Ex7-8Files\EmptySlot.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\Ex7-8Files\Bishop.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Ex7-8Files\Knight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Ex7-8Files\Pawn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Ex7-8Files\Queen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Ex7-8Files\stdafx.cpp">
@@ -78,6 +90,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\Ex7-8Files\EmptySlot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ex7-8Files\Bishop.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ex7-8Files\Knight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ex7-8Files\Pawn.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ex7-8Files\Queen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
