@@ -53,5 +53,6 @@ std::string Board::stringToBoard(std::string board)
 		case '#':
 			this->board[i] = &EmptySlot();
 			break;
+		}
 	}
 }
