@@ -34,7 +34,9 @@ Move GameManager::parseMsg(std::string msg) // Parses the pipe's message and ret
 	return move;
 }
 
-std::string GameManager::boardToString() // composes the board string for the pip
+std::string GameManager::composeMsg() // composes the board string for the pip
 {
-	return board.boardToString();
+	std::string msg;
+	msg += this->board.boardToString();
+	std::cout << "Msg: " << msg << std::endl;
 }

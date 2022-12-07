@@ -5,12 +5,12 @@
 #include "King.h"
 #include "EmptySlot.h"
 
-#define BOARD_SIZE 64
+#define BOARD_SIZE 8
 
 class Board
 {
 private:
-	Figure* board[]; // represents the board
+	Figure* board[BOARD_SIZE][BOARD_SIZE]; // represents the board
 public:
 	Board(std::string board); // CTOR
 	~Board(); // DTOR

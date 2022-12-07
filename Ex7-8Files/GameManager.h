@@ -34,7 +34,7 @@ public:
 	void updateBoard(std::string);
 	bool checkWin();
 	Move parseMsg(std::string board); // Parses the pipe's message and returns a move
-	std::string boardToString(); // composes the board string for the pipe
+	std::string composeMsg(); // composes the board string for the pipe
 
 };
 
