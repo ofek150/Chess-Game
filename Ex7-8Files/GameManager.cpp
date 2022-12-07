@@ -39,4 +39,5 @@ std::string GameManager::composeMsg() // composes the board string for the pip
 	std::string msg;
 	msg += this->board.boardToString();
 	std::cout << "Msg: " << msg << std::endl;
+	return msg;
 }

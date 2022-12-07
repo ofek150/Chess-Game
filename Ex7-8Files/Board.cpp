@@ -40,6 +40,26 @@ std::string Board::boardToString() // parses the strings board
 				else boardStr += "r";
 			}
 			else if (tempType == "EmptySlot") boardStr += "#";
+			else if (tempType == "Queen")
+			{
+				if (tempColor == "White") boardStr += "q";
+				else boardStr += "Q";
+			}
+			else if (tempType == "Pawn")
+			{
+				if (tempColor == "White") boardStr += "p";
+				else boardStr += "P";
+			}
+			else if (tempType == "Bishop")
+			{
+				if (tempColor == "White") boardStr += "b";
+				else boardStr += "B";
+			}
+			else if (tempType == "Knight")
+			{
+				if (tempColor == "White") boardStr += "n";
+				else boardStr += "N";
+			}
 		}
 		
 	}
@@ -67,6 +87,30 @@ std::string Board::stringToBoard(std::string board) // composes the board string
 				break;
 			case 'k':
 				this->board[i][x] = new King("White");
+				break;
+			case 'Q':
+				this->board[i][x] = new Queen("Black");
+				break;
+			case 'q':
+				this->board[i][x] = new Queen("White");
+				break;
+			case 'P':
+				this->board[i][x] = new Pawn("Black");
+				break;
+			case 'p':
+				this->board[i][x] = new Pawn("White");
+				break;
+			case 'B':
+				this->board[i][x] = new Bishop("Black");
+				break;
+			case 'b':
+				this->board[i][x] = new Bishop("White");
+				break;
+			case 'N':
+				this->board[i][x] = new Knight("Black");
+				break;
+			case 'n':
+				this->board[i][x] = new Knight("White");
 				break;
 			case '#':
 				this->board[i][x] = new EmptySlot();

@@ -3,6 +3,10 @@
 //#include "Figure.h"
 #include "Rook.h"
 #include "King.h"
+#include "Bishop.h"
+#include "Queen.h"
+#include "Pawn.h"
+#include "Knight.h"
 #include "EmptySlot.h"
 
 #define BOARD_SIZE 8
