@@ -18,12 +18,6 @@
     <ClInclude Include="..\Ex7-8Files\Pipe.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Ex7-8Files\stdafx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Ex7-8Files\targetver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\Ex7-8Files\GameManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -34,6 +28,24 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\Ex7-8Files\Point.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Ex7-8Files\Figure.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Ex7-8Files\King.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Ex7-8Files\Rook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Ex7-8Files\stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Ex7-8Files\targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Ex7-8Files\EmptySlot.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -54,6 +66,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\Ex7-8Files\Point.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ex7-8Files\Figure.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ex7-8Files\King.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ex7-8Files\Rook.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ex7-8Files\EmptySlot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

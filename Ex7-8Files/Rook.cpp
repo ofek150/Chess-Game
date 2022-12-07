@@ -1,6 +1,6 @@
 #include "Rook.h"
 
-Rook::Rook() : Figure("Rook") {} // CTOR
+Rook::Rook(const std::string color) : Figure("Rook", color) {} // CTOR
 
 Rook::~Rook() {} // DTOR
 

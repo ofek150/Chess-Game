@@ -1,6 +1,6 @@
 #include "King.h"
 
-King::King() : Figure("King") {} // CTOR
+King::King(const std::string color) : Figure("King", color) {} // CTOR
 
 King::~King() {} // DTOR
 

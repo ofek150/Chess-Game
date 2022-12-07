@@ -1,7 +1,7 @@
 #include "EmptySlot.h"
 
 
-EmptySlot::EmptySlot() : Figure("EmptySlot") {} // CTOR
+EmptySlot::EmptySlot() : Figure("EmptySlot", "EmptySlot") {} // CTOR
 
 EmptySlot::~EmptySlot() {} // DTOR
 
