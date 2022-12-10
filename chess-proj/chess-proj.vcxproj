@@ -128,18 +128,24 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\Ex7-8Files\Board.h" />
+    <ClInclude Include="..\Ex7-8Files\Figure.h" />
     <ClInclude Include="..\Ex7-8Files\GameManager.h" />
+    <ClInclude Include="..\Ex7-8Files\King.h" />
     <ClInclude Include="..\Ex7-8Files\Move.h" />
     <ClInclude Include="..\Ex7-8Files\Pipe.h" />
     <ClInclude Include="..\Ex7-8Files\Point.h" />
+    <ClInclude Include="..\Ex7-8Files\Rook.h" />
     <ClInclude Include="..\Ex7-8Files\stdafx.h" />
     <ClInclude Include="..\Ex7-8Files\targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Ex7-8Files\Board.cpp" />
+    <ClCompile Include="..\Ex7-8Files\Figure.cpp" />
     <ClCompile Include="..\Ex7-8Files\GameManager.cpp" />
+    <ClCompile Include="..\Ex7-8Files\King.cpp" />
     <ClCompile Include="..\Ex7-8Files\Move.cpp" />
     <ClCompile Include="..\Ex7-8Files\Point.cpp" />
+    <ClCompile Include="..\Ex7-8Files\Rook.cpp" />
     <ClCompile Include="..\Ex7-8Files\Source.cpp" />
     <ClCompile Include="..\Ex7-8Files\stdafx.cpp" />
   </ItemGroup>

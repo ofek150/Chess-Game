@@ -24,16 +24,25 @@
     <ClInclude Include="..\Ex7-8Files\targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Ex7-8Files\GameManager.h">
+    <ClInclude Include="..\Ex7-8Files\King.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Ex7-8Files\Rook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Ex7-8Files\Point.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Ex7-8Files\Figure.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\Ex7-8Files\Board.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Ex7-8Files\Move.h">
+    <ClInclude Include="..\Ex7-8Files\GameManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Ex7-8Files\Point.h">
+    <ClInclude Include="..\Ex7-8Files\Move.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -44,16 +53,25 @@
     <ClCompile Include="..\Ex7-8Files\Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Ex7-8Files\GameManager.cpp">
+    <ClCompile Include="..\Ex7-8Files\King.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ex7-8Files\Rook.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ex7-8Files\Point.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ex7-8Files\Figure.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\Ex7-8Files\Board.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Ex7-8Files\Move.cpp">
+    <ClCompile Include="..\Ex7-8Files\GameManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Ex7-8Files\Point.cpp">
+    <ClCompile Include="..\Ex7-8Files\Move.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

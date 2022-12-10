@@ -2,6 +2,7 @@
 #include <string>
 #include "Point.h"
 #include "GameManager.h"
+#include <cmath>
 
 class Figure
 {
