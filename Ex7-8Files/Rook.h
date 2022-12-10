@@ -1,6 +1,6 @@
 #pragma once
 #include "Figure.h"
-class Rook :public Figure
+class Rook : public Figure
 {
 public:
 	Rook(const std::string color, std::string type = "Rook"); // CTOR

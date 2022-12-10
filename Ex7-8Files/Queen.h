@@ -1,8 +1,7 @@
 #pragma once
-#include "Bishop.h"
-#include "Rook.h"
+#include "Figure.h"
 
-class Queen : public Bishop, public Rook
+class Queen : Figure
 {
 public:
 	Queen(const std::string& color); // CTOR
