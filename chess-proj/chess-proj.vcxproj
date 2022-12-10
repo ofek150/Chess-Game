@@ -17,11 +17,12 @@
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
+
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{c3939f08-b2a0-47f3-b2b0-22836c0d1b46}</ProjectGuid>
+    <ProjectGuid>{50f72622-e705-45cf-8ef0-8b12949e90db}</ProjectGuid>
     <RootNamespace>chessproj</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -52,24 +53,27 @@
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
+
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
-  <ImportGroup Label="Shared">
+  <ImportGroup Label="Shared" >
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
+    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    </ImportGroup>
+    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    </ImportGroup>
+    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    </ImportGroup>
+    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    </ImportGroup>
+
   <PropertyGroup Label="UserMacros" />
+
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -126,57 +130,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="..\Ex7-8Files\Bishop.h" />
-    <ClInclude Include="..\Ex7-8Files\Board.h" />
-<<<<<<< HEAD
-    <ClInclude Include="..\Ex7-8Files\Figure.h" />
-    <ClInclude Include="..\Ex7-8Files\GameManager.h" />
-    <ClInclude Include="..\Ex7-8Files\King.h" />
-=======
-    <ClInclude Include="..\Ex7-8Files\EmptySlot.h" />
-    <ClInclude Include="..\Ex7-8Files\Figure.h" />
-    <ClInclude Include="..\Ex7-8Files\GameManager.h" />
-    <ClInclude Include="..\Ex7-8Files\King.h" />
-    <ClInclude Include="..\Ex7-8Files\Knight.h" />
->>>>>>> a2c3c99527eeb709611abe62008472233a357233
-    <ClInclude Include="..\Ex7-8Files\Move.h" />
-    <ClInclude Include="..\Ex7-8Files\Pawn.h" />
-    <ClInclude Include="..\Ex7-8Files\Pipe.h" />
-    <ClInclude Include="..\Ex7-8Files\Point.h" />
-<<<<<<< HEAD
-=======
-    <ClInclude Include="..\Ex7-8Files\Queen.h" />
->>>>>>> a2c3c99527eeb709611abe62008472233a357233
-    <ClInclude Include="..\Ex7-8Files\Rook.h" />
-    <ClInclude Include="..\Ex7-8Files\stdafx.h" />
-    <ClInclude Include="..\Ex7-8Files\targetver.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\Ex7-8Files\Bishop.cpp" />
-    <ClCompile Include="..\Ex7-8Files\Board.cpp" />
-<<<<<<< HEAD
-    <ClCompile Include="..\Ex7-8Files\Figure.cpp" />
-    <ClCompile Include="..\Ex7-8Files\GameManager.cpp" />
-    <ClCompile Include="..\Ex7-8Files\King.cpp" />
-=======
-    <ClCompile Include="..\Ex7-8Files\EmptySlot.cpp" />
-    <ClCompile Include="..\Ex7-8Files\Figure.cpp" />
-    <ClCompile Include="..\Ex7-8Files\GameManager.cpp" />
-    <ClCompile Include="..\Ex7-8Files\King.cpp" />
-    <ClCompile Include="..\Ex7-8Files\Knight.cpp" />
->>>>>>> a2c3c99527eeb709611abe62008472233a357233
-    <ClCompile Include="..\Ex7-8Files\Move.cpp" />
-    <ClCompile Include="..\Ex7-8Files\Pawn.cpp" />
-    <ClCompile Include="..\Ex7-8Files\Point.cpp" />
-<<<<<<< HEAD
-=======
-    <ClCompile Include="..\Ex7-8Files\Queen.cpp" />
->>>>>>> a2c3c99527eeb709611abe62008472233a357233
-    <ClCompile Include="..\Ex7-8Files\Rook.cpp" />
-    <ClCompile Include="..\Ex7-8Files\Source.cpp" />
-    <ClCompile Include="..\Ex7-8Files\stdafx.cpp" />
-  </ItemGroup>
+
+  <ItemGroup></ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
