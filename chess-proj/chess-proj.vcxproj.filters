@@ -18,6 +18,7 @@
     <ClInclude Include="..\Ex7-8Files\Pipe.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="..\Ex7-8Files\stdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -34,6 +35,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\Ex7-8Files\Figure.h">
+=======
+    <ClInclude Include="..\Ex7-8Files\GameManager.h">
+>>>>>>> a2c3c99527eeb709611abe62008472233a357233
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\Ex7-8Files\Board.h">
@@ -43,6 +47,36 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\Ex7-8Files\Move.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Ex7-8Files\Figure.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Ex7-8Files\King.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Ex7-8Files\Rook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Ex7-8Files\stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Ex7-8Files\targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Ex7-8Files\EmptySlot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Ex7-8Files\Knight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Ex7-8Files\Pawn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Ex7-8Files\Queen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Ex7-8Files\Bishop.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -65,6 +99,7 @@
     <ClCompile Include="..\Ex7-8Files\Figure.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="..\Ex7-8Files\Board.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -72,6 +107,27 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\Ex7-8Files\Move.cpp">
+=======
+    <ClCompile Include="..\Ex7-8Files\King.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ex7-8Files\Rook.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ex7-8Files\EmptySlot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ex7-8Files\Knight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ex7-8Files\Pawn.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ex7-8Files\Queen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ex7-8Files\Bishop.cpp">
+>>>>>>> a2c3c99527eeb709611abe62008472233a357233
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

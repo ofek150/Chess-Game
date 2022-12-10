@@ -127,24 +127,52 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\Ex7-8Files\Bishop.h" />
     <ClInclude Include="..\Ex7-8Files\Board.h" />
+<<<<<<< HEAD
     <ClInclude Include="..\Ex7-8Files\Figure.h" />
     <ClInclude Include="..\Ex7-8Files\GameManager.h" />
     <ClInclude Include="..\Ex7-8Files\King.h" />
+=======
+    <ClInclude Include="..\Ex7-8Files\EmptySlot.h" />
+    <ClInclude Include="..\Ex7-8Files\Figure.h" />
+    <ClInclude Include="..\Ex7-8Files\GameManager.h" />
+    <ClInclude Include="..\Ex7-8Files\King.h" />
+    <ClInclude Include="..\Ex7-8Files\Knight.h" />
+>>>>>>> a2c3c99527eeb709611abe62008472233a357233
     <ClInclude Include="..\Ex7-8Files\Move.h" />
+    <ClInclude Include="..\Ex7-8Files\Pawn.h" />
     <ClInclude Include="..\Ex7-8Files\Pipe.h" />
     <ClInclude Include="..\Ex7-8Files\Point.h" />
+<<<<<<< HEAD
+=======
+    <ClInclude Include="..\Ex7-8Files\Queen.h" />
+>>>>>>> a2c3c99527eeb709611abe62008472233a357233
     <ClInclude Include="..\Ex7-8Files\Rook.h" />
     <ClInclude Include="..\Ex7-8Files\stdafx.h" />
     <ClInclude Include="..\Ex7-8Files\targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Ex7-8Files\Bishop.cpp" />
     <ClCompile Include="..\Ex7-8Files\Board.cpp" />
+<<<<<<< HEAD
     <ClCompile Include="..\Ex7-8Files\Figure.cpp" />
     <ClCompile Include="..\Ex7-8Files\GameManager.cpp" />
     <ClCompile Include="..\Ex7-8Files\King.cpp" />
+=======
+    <ClCompile Include="..\Ex7-8Files\EmptySlot.cpp" />
+    <ClCompile Include="..\Ex7-8Files\Figure.cpp" />
+    <ClCompile Include="..\Ex7-8Files\GameManager.cpp" />
+    <ClCompile Include="..\Ex7-8Files\King.cpp" />
+    <ClCompile Include="..\Ex7-8Files\Knight.cpp" />
+>>>>>>> a2c3c99527eeb709611abe62008472233a357233
     <ClCompile Include="..\Ex7-8Files\Move.cpp" />
+    <ClCompile Include="..\Ex7-8Files\Pawn.cpp" />
     <ClCompile Include="..\Ex7-8Files\Point.cpp" />
+<<<<<<< HEAD
+=======
+    <ClCompile Include="..\Ex7-8Files\Queen.cpp" />
+>>>>>>> a2c3c99527eeb709611abe62008472233a357233
     <ClCompile Include="..\Ex7-8Files\Rook.cpp" />
     <ClCompile Include="..\Ex7-8Files\Source.cpp" />
     <ClCompile Include="..\Ex7-8Files\stdafx.cpp" />

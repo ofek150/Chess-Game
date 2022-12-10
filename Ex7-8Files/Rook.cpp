@@ -1,11 +1,10 @@
 #include "Rook.h"
 
-Rook::Rook() : Figure("Rook") {}
+Rook::Rook(const std::string color, std::string type = "Bishop") : Figure(type, color) {} // CTOR
 
-Rook::~Rook(){}
+Rook::~Rook() {} // DTOR
 
-bool Rook::canMove(Board& board, Move move)
+bool Rook::canMove(const Board& board, const Move move) const// Returns true if the Rook can move and false if it can't
 {
-	//doesn't cause chess, no one blocks the way,
 	return true;
 }
