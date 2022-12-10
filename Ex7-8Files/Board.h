@@ -8,17 +8,18 @@
 #include "Pawn.h"
 #include "Knight.h"
 #include "EmptySlot.h"
-
-#define BOARD_SIZE 8
+#include "Consts.h"
 
 class Board
 {
 private:
-	Figure* board[BOARD_SIZE][BOARD_SIZE]; // represents the board
+	Figure* board[BOARD_SIZE][BOARD_SIZE];// represents the board
 public:
 	Board(std::string board); // CTOR
 	~Board(); // DTOR
-	std::string stringToBoard(std::string board); // parses the strings board
+	Figure* getFigure(int y, int x); // Returns figure in pos [y][x]
+	Figure* (&getBoard())[BOARD_SIZE][BOARD_SIZE];
+	void setFigure(Figure* figure, int x, int y);
+	void stringToBoard(std::string _board); // parses the strings board
 	std::string boardToString(); // composes the board string for the pipe
 };
-

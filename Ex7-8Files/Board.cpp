@@ -8,11 +8,26 @@ Board::~Board() // DTOR
 {
 	for (int i = 0; i < BOARD_SIZE; i++)
 	{
-		for (int x = 0; i < BOARD_SIZE; i++)
+		for (int x = 0; x < BOARD_SIZE; x++)
 		{
-			delete this->board[i];
+			delete this->board[i][x];
 		}
 	}
+}
+
+Figure* Board::getFigure(int x, int y) // Returns figure in pos [y][x]
+{
+	return this->board[y][x];
+}
+
+Figure* (&Board::getBoard())[BOARD_SIZE][BOARD_SIZE]
+{
+	return this->board;
+}
+
+void Board::setFigure(Figure* figure, int x, int y)
+{
+	this->board[y][x] = figure;
 }
 
 std::string Board::boardToString() // parses the strings board
@@ -25,57 +40,55 @@ std::string Board::boardToString() // parses the strings board
 
 	for (int i = 0; i < BOARD_SIZE; i++)
 	{
-		for (int x = 0; i < BOARD_SIZE; i++)
+		for (int x = 0; x < BOARD_SIZE; x++)
 		{
 			tempType = this->board[i][x]->getType();
 			tempColor = this->board[i][x]->getColor();
 			if (tempType == "Ruke")
 			{
-				if (tempColor == "White") boardStr += "k";
+				if (tempColor == "White") boardStr += "R";
 				else boardStr += "r";
 			}
 			else if (tempType == "King")
 			{
-				if (tempColor == "White") boardStr += "k";
-				else boardStr += "r";
+				if (tempColor == "White") boardStr += "K";
+				else boardStr += "k";
 			}
 			else if (tempType == "EmptySlot") boardStr += "#";
 			else if (tempType == "Queen")
 			{
-				if (tempColor == "White") boardStr += "q";
-				else boardStr += "Q";
+				if (tempColor == "White") boardStr += "Q";
+				else boardStr += "q";
 			}
 			else if (tempType == "Pawn")
 			{
-				if (tempColor == "White") boardStr += "p";
-				else boardStr += "P";
+				if (tempColor == "White") boardStr += "P";
+				else boardStr += "p";
 			}
 			else if (tempType == "Bishop")
 			{
-				if (tempColor == "White") boardStr += "b";
-				else boardStr += "B";
+				if (tempColor == "White") boardStr += "B";
+				else boardStr += "b";
 			}
 			else if (tempType == "Knight")
 			{
-				if (tempColor == "White") boardStr += "n";
-				else boardStr += "N";
+				if (tempColor == "White") boardStr += "N";
+				else boardStr += "n";
 			}
 		}
-		
 	}
-
+	return boardStr;
 }
 
-std::string Board::stringToBoard(std::string board) // composes the board string for the pipe
+void Board::stringToBoard(std::string board) // composes the board string for the pipe
 {
-	int boardSize = board.length();
-	Figure* temp = nullptr;
-	for (int i = 0; i < boardSize; i++)
+	for (int i = 0; i < BOARD_SIZE; i++)
 	{
-		for (int x = 0; i < BOARD_SIZE; i++)
+		for (int x = 0; x < BOARD_SIZE; x++)
 		{
-			switch (board[i])
+			switch (board.at(i*BOARD_SIZE + x))
 			{
+			// We intentionaly switched the colors on the creation
 			case 'R':
 				this->board[i][x] = new Rook("Black");
 				break;

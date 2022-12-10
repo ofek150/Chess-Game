@@ -144,6 +144,7 @@
   <ItemGroup>
     <ClInclude Include="..\Ex7-8Files\Bishop.h" />
     <ClInclude Include="..\Ex7-8Files\Board.h" />
+    <ClInclude Include="..\Ex7-8Files\Consts.h" />
     <ClInclude Include="..\Ex7-8Files\EmptySlot.h" />
     <ClInclude Include="..\Ex7-8Files\Figure.h" />
     <ClInclude Include="..\Ex7-8Files\GameManager.h" />
@@ -151,7 +152,6 @@
     <ClInclude Include="..\Ex7-8Files\Knight.h" />
     <ClInclude Include="..\Ex7-8Files\Move.h" />
     <ClInclude Include="..\Ex7-8Files\Pawn.h" />
-    <ClInclude Include="..\Ex7-8Files\Pipe.h" />
     <ClInclude Include="..\Ex7-8Files\Point.h" />
     <ClInclude Include="..\Ex7-8Files\Queen.h" />
     <ClInclude Include="..\Ex7-8Files\Rook.h" />

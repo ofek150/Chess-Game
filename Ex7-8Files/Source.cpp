@@ -46,8 +46,7 @@ void main()
 	char msgToGraphics[1024];
 	// msgToGraphics should contain the board string accord the protocol
 	// YOUR CODE
-
-	strcpy_s(msgToGraphics, "rnbkqbnrpppppppp################################PPPPPPPPRNBKQBNR1"); // just example...
+	strcpy_s(msgToGraphics, "rnbkqbnrpppppppp################################PPPPPPPPRNBKQBNR0"); // just example...
 	
 	p.sendMessageToGraphics(msgToGraphics);   // send the board string
 	GameManager gameManager(msgToGraphics);
@@ -58,17 +57,18 @@ void main()
 
 	while (msgFromGraphics != "quit")
 	{
-		gameManager.parseMsg(msgFromGraphics);
+		//gameManager.parseMsg(msgFromGraphics);
 		// should handle the string the sent from graphics
 		// according the protocol. Ex: e2e4           (move e2 to e4)
 		
 		// YOUR CODE
-		strcpy_s(msgToGraphics, "YOUR CODE"); // msgToGraphics should contain the result of the operation
+		//msgToGraphics = gameManager.updateBoard(msgFromGraphics);
+		strcpy_s(msgToGraphics, gameManager.updateBoard(msgFromGraphics).c_str()); // msgToGraphics should contain the result of the operation
 
 		/******* JUST FOR EREZ DEBUGGING ******/
-		int r = rand() % 10; // just for debugging......
-		msgToGraphics[0] = (char)(1 + '0');
-		msgToGraphics[1] = 0;
+		//int r = rand() % 10; // just for debugging......
+		//msgToGraphics[0] = (char)(1 + '0');
+		//msgToGraphics[1] = 0;
 		/******* JUST FOR EREZ DEBUGGING ******/
 
 
@@ -77,7 +77,6 @@ void main()
 
 		// get message from graphics
 		msgFromGraphics = p.getMessageFromGraphics();
-		gameManager.parseMsg(msgFromGraphics);
 	}
 
 	p.close();

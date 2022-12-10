@@ -1,6 +1,6 @@
 #include "Figure.h"
 
-Figure::Figure(const std::string type, const std::string ) : type(type), stepsTaken(0) {}
+Figure::Figure(const std::string type, const std::string color) : type(type), stepsTaken(0), color(color) {}
 
 Figure::~Figure() {}
 
@@ -11,10 +11,10 @@ std::string Figure::getType()
 
 std::string Figure::getColor()
 {
-    this->color;
+    return this->color;
 }
 
 int Figure::getStepsTaken()
 {
-    this->stepsTaken;
+    return this->stepsTaken;
 }

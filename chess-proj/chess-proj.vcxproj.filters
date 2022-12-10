@@ -83,9 +83,6 @@
     <ClInclude Include="..\Ex7-8Files\Pawn.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Ex7-8Files\Pipe.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\Ex7-8Files\Point.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -93,6 +90,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\Ex7-8Files\Rook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Ex7-8Files\Consts.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
