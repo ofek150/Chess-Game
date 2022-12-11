@@ -51,6 +51,7 @@ std::string GameManager::updateBoard(const std::string& msg)
 		switch (moveMsgId)
 		{
 		case VALID_MOVE:
+			tempSrc->setStepsTaken(tempSrc->getStepsTaken() + 1);
 			changeTurn();
 			delete tempDest;
 			break;
