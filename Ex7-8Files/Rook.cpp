@@ -27,7 +27,6 @@ bool Rook::canMove(Figure* (board)[BOARD_SIZE][BOARD_SIZE], const Move& move) co
         for (int i = srcY+1; i < destY; i++)
         {
             temp = board[i][srcX];
-            //temp = board.getFigure(i, srcX);
             if (temp->getType() != "EmptySlot") {
                 return false;
             }
@@ -38,7 +37,6 @@ bool Rook::canMove(Figure* (board)[BOARD_SIZE][BOARD_SIZE], const Move& move) co
         for (int i = srcX+1; i < destX; i++)
         {
             temp = board[srcY][i];
-            //temp = board.getFigure(srcY, i);
             if (temp->getType() != "EmptySlot") {
                 return false;
             }

@@ -30,56 +30,6 @@ void Board::setFigure(Figure* figure, int x, int y)
 	this->board[y][x] = figure;
 }
 
-std::string Board::boardToString() // parses the strings board
-{
-	std::string boardStr;
-	std::string tempType;
-	std::string tempColor;
-	
-	std::string defaultBoard = "rnbkqbnrpppppppp################################PPPPPPPPRNBKQBNR1";
-
-	for (int i = 0; i < BOARD_SIZE; i++)
-	{
-		for (int x = 0; x < BOARD_SIZE; x++)
-		{
-			tempType = this->board[i][x]->getType();
-			tempColor = this->board[i][x]->getColor();
-			if (tempType == "Ruke")
-			{
-				if (tempColor == "White") boardStr += "R";
-				else boardStr += "r";
-			}
-			else if (tempType == "King")
-			{
-				if (tempColor == "White") boardStr += "K";
-				else boardStr += "k";
-			}
-			else if (tempType == "EmptySlot") boardStr += "#";
-			else if (tempType == "Queen")
-			{
-				if (tempColor == "White") boardStr += "Q";
-				else boardStr += "q";
-			}
-			else if (tempType == "Pawn")
-			{
-				if (tempColor == "White") boardStr += "P";
-				else boardStr += "p";
-			}
-			else if (tempType == "Bishop")
-			{
-				if (tempColor == "White") boardStr += "B";
-				else boardStr += "b";
-			}
-			else if (tempType == "Knight")
-			{
-				if (tempColor == "White") boardStr += "N";
-				else boardStr += "n";
-			}
-		}
-	}
-	return boardStr;
-}
-
 void Board::stringToBoard(std::string board) // composes the board string for the pipe
 {
 	for (int i = 0; i < BOARD_SIZE; i++)

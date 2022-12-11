@@ -33,7 +33,7 @@ std::string GameManager::updateBoard(const std::string& msg)
 	{
 		returnMsg = composeMsg(INVALID_SRC_DOESNT_HAVE_PLAYER_FIGURE);
 	}
-	else if (tempSrc->getType() == "#")
+	else if (tempSrc->getType() == "EmptySlot")
 	{
 		returnMsg = composeMsg(INVALID_SRC_DOESNT_HAVE_PLAYER_FIGURE);
 	}
@@ -97,7 +97,6 @@ Move GameManager::parseMsg(const std::string& msg) // Parses the pipe's message 
 
 std::string GameManager::composeMsg(int moveMsgId) // composes the board string for the pip
 {
-	//std::string msg = this->board.boardToString() + std::to_string(moveMsgId);
 	std::string msg = std::to_string(moveMsgId);
 	std::cout << "Msg: " << msg << std::endl;
 	return msg;

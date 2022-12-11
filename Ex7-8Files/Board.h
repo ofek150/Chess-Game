@@ -21,5 +21,4 @@ public:
 	Figure* (&getBoard())[BOARD_SIZE][BOARD_SIZE];
 	void setFigure(Figure* figure, int x, int y);
 	void stringToBoard(std::string _board); // parses the strings board
-	std::string boardToString(); // composes the board string for the pipe
 };
