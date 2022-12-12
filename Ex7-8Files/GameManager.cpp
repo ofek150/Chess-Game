@@ -80,7 +80,6 @@ std::string GameManager::updateBoard(const std::string& msg)
 
 int GameManager::checkWin(const std::string& color) // Returns INVALID_CAUSES_CHESS, VALID_MOVE_CHESS or VALID_MOVE
 {
-	if (checkCheck(color)) return INVALID_CAUSES_CHESS;
 	if (color == "White") 
 	{
 		if (checkCheckmate("Black")) return VALID_CHECKMATE;
@@ -97,6 +96,7 @@ int GameManager::checkWin(const std::string& color) // Returns INVALID_CAUSES_CH
 			if (checkCheck("White")) return VALID_MOVE_CHESS;
 		}
 	}
+	if (checkCheck(color)) return INVALID_CAUSES_CHESS;
 	return VALID_MOVE;
 }
 
@@ -107,6 +107,7 @@ bool GameManager::checkCheck(const std::string& color) // Checks if there's chec
 
 	int kingX = 0;
 	int kingY = 0;
+	bool foundKing = false;
 
 	for (int i = 0; i < BOARD_SIZE; i++)
 	{
@@ -120,10 +121,12 @@ bool GameManager::checkCheck(const std::string& color) // Checks if there's chec
 					king = temp;
 					kingX = x;
 					kingY = i;
+					foundKing == true;
 					break;
 				}
 			}
 		}
+		if (foundKing) break;
 	}
 
 	for (int i = 0; i < BOARD_SIZE; i++)
@@ -146,7 +149,64 @@ bool GameManager::checkCheck(const std::string& color) // Checks if there's chec
 
 bool GameManager::checkCheckmate(const std::string& color)
 {
-	return false;
+	bool isCheck = checkCheck(color);
+	if (!isCheck) return false;
+
+	Figure* king = nullptr;
+	Figure* temp = nullptr;
+
+	int kingX = 0;
+	int kingY = 0;
+	bool foundKing = false;
+
+	for (int i = 0; i < BOARD_SIZE; i++)
+	{
+		for (int x = 0; x < BOARD_SIZE; x++)
+		{
+			temp = this->board.getFigure(x, i);
+			if (temp->getType() == "King")
+			{
+				if (temp->getColor() == color)
+				{
+					king = temp;
+					kingX = x;
+					kingY = i;
+					foundKing == true;
+					break;
+				}
+			}
+			if (foundKing) break;
+		}
+	}
+
+	// Check all possible moves for the king
+	for (int i = -1; i < 2; i++)
+	{
+		for (int x = -1; x < 2; x++)
+		{
+			if (i == 0 && x == 0) continue;
+			Move to(Point(kingX, kingY), Point(kingX + x, kingY + i));
+			if (king->canMove(this->board.getBoard(), to))
+			{
+				// Try out the move
+				Figure* tempPiece = this->board.getFigure(kingX + x, kingY + i);
+				this->board.setFigure(king, kingX + x, kingY + i);
+				this->board.setFigure(new EmptySlot(), kingX, kingY);
+				bool isCheckAfterMove = checkCheck(color);
+				// Undo the move
+				this->board.setFigure(tempPiece, kingX + x, kingY + i);
+				this->board.setFigure(king, kingX, kingY);
+				if (!isCheckAfterMove)
+				{
+					return false;
+				}
+				
+			}
+		}
+	}
+
+	// If no move can be made to get out of check, then it is checkmate
+	return true;
 }
 
 

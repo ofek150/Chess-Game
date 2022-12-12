@@ -25,7 +25,7 @@ bool Pawn::canMove(Figure* (board)[BOARD_SIZE][BOARD_SIZE], const Move& move) co
                 return false;
             }
         }
-        else if (deltaY == 1)
+        else if (deltaY == 1 && board[destY][destX]->getType() == "EmptySlot")
         {
             if (deltaX != 0)
             {
@@ -54,7 +54,7 @@ bool Pawn::canMove(Figure* (board)[BOARD_SIZE][BOARD_SIZE], const Move& move) co
                 return false;
             }
         }
-        else if (deltaY == -1)
+        else if (deltaY == -1 && board[destY][destX]->getType() == "EmptySlot")
         {
             if (deltaX != 0)
             {

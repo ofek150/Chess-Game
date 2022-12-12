@@ -16,6 +16,7 @@ private:
 	Figure* board[BOARD_SIZE][BOARD_SIZE];// represents the board
 public:
 	Board(std::string board); // CTOR
+	//Board(Board& other); //Copy CTOR;
 	~Board(); // DTOR
 	Figure* getFigure(int y, int x); // Returns figure in pos [y][x]
 	Figure* (&getBoard())[BOARD_SIZE][BOARD_SIZE];

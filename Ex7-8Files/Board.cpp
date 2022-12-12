@@ -24,7 +24,6 @@ Figure* (&Board::getBoard())[BOARD_SIZE][BOARD_SIZE]
 {
 	return this->board;
 }
-
 void Board::setFigure(Figure* figure, int x, int y)
 {
 	this->board[y][x] = figure;
