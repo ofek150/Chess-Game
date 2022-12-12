@@ -12,7 +12,7 @@ bool King::canMove(Figure* (board)[BOARD_SIZE][BOARD_SIZE], const Move& move) co
     int deltaX = std::abs(srcX - destX);
     int deltaY = std::abs(srcY - destY);
     Figure* tempFigure = nullptr;
-    if (board[srcY][srcX]->getColor() == "White" && this->stepsTaken == 0)
+    /*if (board[srcY][srcX]->getColor() == "White" && this->stepsTaken == 0)
     {
         if ((destX == 0 && destY == 0) || (destX == 7 && destY == 0))
         {
@@ -41,7 +41,7 @@ bool King::canMove(Figure* (board)[BOARD_SIZE][BOARD_SIZE], const Move& move) co
                 }
             }
         }
-    }
+    }*/
     if (deltaX > 1 || deltaY > 1)
     {
         return false;
