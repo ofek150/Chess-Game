@@ -60,7 +60,11 @@ std::string GameManager::updateBoard(const std::string& msg)
 			this->board.setFigure(tempDest, destX, destY);
 			break;
 		case VALID_MOVE_CHESS:
-			this->gameEnded = true;
+			changeTurn();
+			delete tempDest;
+			break;
+		case VALID_CHECKMATE:
+			gameEnded = true;
 			delete tempDest;
 			break;
 		}
@@ -74,15 +78,78 @@ std::string GameManager::updateBoard(const std::string& msg)
 	return returnMsg;
 }
 
-int GameManager::checkWin(const std::string& color)
+int GameManager::checkWin(const std::string& color) // Returns INVALID_CAUSES_CHESS, VALID_MOVE_CHESS or VALID_MOVE
 {
-	/*
-	if current player wins return VALID_MOVE_CHESS 
-	if the other player wins return INVALID_CAUSES_CHESS
-	if no ones wins return VALID MOVE
-	*/
+	if (checkCheck(color)) return INVALID_CAUSES_CHESS;
+	if (color == "White") 
+	{
+		if (checkCheckmate("Black")) return VALID_CHECKMATE;
+		else
+		{
+			if (checkCheck("Black")) return VALID_MOVE_CHESS;
+		}
+	}
+	else
+	{
+		if (checkCheckmate("White")) return VALID_CHECKMATE;
+		else
+		{
+			if (checkCheck("White")) return VALID_MOVE_CHESS;
+		}
+	}
 	return VALID_MOVE;
 }
+
+bool GameManager::checkCheck(const std::string& color) // Checks if there's check on	the player with the color 'color' and return true / false
+{
+	Figure* king = nullptr;
+	Figure* temp = nullptr;
+
+	int kingX = 0;
+	int kingY = 0;
+
+	for (int i = 0; i < BOARD_SIZE; i++)
+	{
+		for (int x = 0; x < BOARD_SIZE; x++)
+		{
+			temp = this->board.getFigure(x, i);
+			if (temp->getType() == "King")
+			{
+				if (temp->getColor() == color)
+				{
+					king = temp;
+					kingX = x;
+					kingY = i;
+					break;
+				}
+			}
+		}
+	}
+
+	for (int i = 0; i < BOARD_SIZE; i++)
+	{
+		for (int x = 0; x < BOARD_SIZE; x++)
+		{
+			temp = this->board.getFigure(x, i);
+			if (temp->getColor() != color)
+			{
+				Move toKing(Point(x, i), Point(kingX, kingY));
+				if (temp->canMove(this->board.getBoard(), toKing))
+				{
+					return true;
+				}
+			}
+		}
+	}
+	return false;
+}
+
+bool GameManager::checkCheckmate(const std::string& color)
+{
+	return false;
+}
+
+
 
 Move GameManager::parseMsg(const std::string& msg) // Parses the pipe's message and returns a move
 {
