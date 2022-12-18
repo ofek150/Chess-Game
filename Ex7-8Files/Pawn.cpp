@@ -12,15 +12,14 @@ bool Pawn::canMove(Figure* (board)[BOARD_SIZE][BOARD_SIZE], const Move& move) co
     {
         if (deltaY == 1 && std::abs(deltaX) == 1)
         {
-            Figure* destFigure = board[destY][destX];
-            if (destFigure->getType() == "EmptySlot")
+            if (board[destY][destX]->getType() == "EmptySlot")
             {
                 return false;
             }
         }
         else if (deltaY == 2)
         {
-            if (deltaX != 0 || board[srcY][srcX]->getStepsTaken() != 0)
+            if (deltaX != 0 || board[srcY][srcX]->getStepsTaken() != 0 || board[destY][destX]->getType() != "EmptySlot")
             {
                 return false;
             }
@@ -41,15 +40,14 @@ bool Pawn::canMove(Figure* (board)[BOARD_SIZE][BOARD_SIZE], const Move& move) co
     {
         if (deltaY == -1 && std::abs(deltaX) == 1)
         {
-            Figure* destFigure = board[destY][destX];
-            if (destFigure->getType() == "EmptySlot")
+            if (board[destY][destX]->getType() == "EmptySlot")
             {
                 return false;
             }
         }
         else if (deltaY == -2)
         {
-            if (deltaX != 0 || board[destY][destX]->getStepsTaken() != 0)
+            if (deltaX != 0 || board[destY][destX]->getStepsTaken() != 0 || board[destY][destX]->getType() != "EmptySlot")
             {
                 return false;
             }

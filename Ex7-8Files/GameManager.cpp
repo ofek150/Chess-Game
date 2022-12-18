@@ -217,11 +217,13 @@ bool GameManager::checkCheckmate(const std::string& color)
 								// Try out the move
 								Figure* tempPiece = this->board.getFigure(y, j);
 								this->board.setFigure(temp, y, j);
-								this->board.setFigure(new EmptySlot(), x, i);
+								Figure* emptySlot = new EmptySlot();
+								this->board.setFigure(emptySlot, x, i);
 								bool isCheckAfterMove = checkCheck(color);
 								// Undo the move
 								this->board.setFigure(tempPiece, y, j);                            
 								this->board.setFigure(temp, x, i);
+								delete emptySlot
 								if (!isCheckAfterMove)
 								{
 									return false;
