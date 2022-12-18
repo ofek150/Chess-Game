@@ -223,7 +223,7 @@ bool GameManager::checkCheckmate(const std::string& color)
 								// Undo the move
 								this->board.setFigure(tempPiece, y, j);                            
 								this->board.setFigure(temp, x, i);
-								delete emptySlot
+								delete emptySlot;
 								if (!isCheckAfterMove)
 								{
 									return false;
