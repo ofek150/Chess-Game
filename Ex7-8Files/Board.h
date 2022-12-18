@@ -19,7 +19,7 @@ public:
 	//Board(Board& other); //Copy CTOR;
 	~Board(); // DTOR
 	Figure* getFigure(int y, int x); // Returns figure in pos [y][x]
-	Figure* (&getBoard())[BOARD_SIZE][BOARD_SIZE];
-	void setFigure(Figure* figure, int x, int y);
-	void stringToBoard(std::string _board); // parses the strings board
+	Figure* (&getBoard())[BOARD_SIZE][BOARD_SIZE]; // Returns the board
+	void setFigure(Figure* figure, int x, int y); // Sets the figure in pos [x][y]
+	void stringToBoard(std::string _board); // Parses the string board
 };

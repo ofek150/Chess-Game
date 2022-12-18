@@ -103,17 +103,15 @@ int GameManager::checkWin(const std::string& color) // Returns INVALID_CAUSES_CH
 bool GameManager::checkCheck(const std::string& color) // Checks if there's check on	the player with the color 'color' and return true / false
 {
 	Figure* king = nullptr;
-	Figure* temp = nullptr;
 
 	int kingX = 0;
 	int kingY = 0;
-	bool foundKing = false;
 
 	for (int i = 0; i < BOARD_SIZE; i++)
 	{
 		for (int x = 0; x < BOARD_SIZE; x++)
 		{
-			temp = this->board.getFigure(x, i);
+			Figure* temp = this->board.getFigure(x, i);
 			if (temp->getType() == "King")
 			{
 				if (temp->getColor() == color)
@@ -121,19 +119,17 @@ bool GameManager::checkCheck(const std::string& color) // Checks if there's chec
 					king = temp;
 					kingX = x;
 					kingY = i;
-					foundKing == true;
 					break;
 				}
 			}
 		}
-		if (foundKing) break;
 	}
 
 	for (int i = 0; i < BOARD_SIZE; i++)
 	{
 		for (int x = 0; x < BOARD_SIZE; x++)
 		{
-			temp = this->board.getFigure(x, i);
+			Figure* temp = this->board.getFigure(x, i);
 			if (temp->getColor() != color)
 			{
 				Move toKing(Point(x, i), Point(kingX, kingY));
@@ -149,21 +145,19 @@ bool GameManager::checkCheck(const std::string& color) // Checks if there's chec
 
 bool GameManager::checkCheckmate(const std::string& color)
 {
-	bool isCheck = checkCheck(color);
-	if (!isCheck) return false;
+	// Check if the player's king is in check
+	if (!checkCheck(color)) return false;
 
 	Figure* king = nullptr;
-	Figure* temp = nullptr;
 
 	int kingX = 0;
 	int kingY = 0;
-	bool foundKing = false;
 
 	for (int i = 0; i < BOARD_SIZE; i++)
 	{
 		for (int x = 0; x < BOARD_SIZE; x++)
 		{
-			temp = this->board.getFigure(x, i);
+			Figure* temp = this->board.getFigure(x, i);
 			if (temp->getType() == "King")
 			{
 				if (temp->getColor() == color)
@@ -171,36 +165,70 @@ bool GameManager::checkCheckmate(const std::string& color)
 					king = temp;
 					kingX = x;
 					kingY = i;
-					foundKing == true;
 					break;
 				}
 			}
-			if (foundKing) break;
 		}
 	}
 
 	// Check all possible moves for the king
-	for (int i = -1; i < 2; i++)
+	for (int i = 0; i < BOARD_SIZE; i++)
 	{
-		for (int x = -1; x < 2; x++)
+		for (int x = 0; x < BOARD_SIZE; x++)
 		{
-			if (i == 0 && x == 0) continue;
-			Move to(Point(kingX, kingY), Point(kingX + x, kingY + i));
+			Move to(Point(kingX, kingY), Point(x, i));
 			if (king->canMove(this->board.getBoard(), to))
 			{
 				// Try out the move
-				Figure* tempPiece = this->board.getFigure(kingX + x, kingY + i);
-				this->board.setFigure(king, kingX + x, kingY + i);
-				this->board.setFigure(new EmptySlot(), kingX, kingY);
+				Figure* tempPiece = this->board.getFigure(x, i);
+				if (tempPiece->getColor() == color) continue;
+				this->board.setFigure(king, x, i);
+				Figure* emptySlot = new EmptySlot();
+				this->board.setFigure(emptySlot, kingX, kingY);
 				bool isCheckAfterMove = checkCheck(color);
 				// Undo the move
-				this->board.setFigure(tempPiece, kingX + x, kingY + i);
+				this->board.setFigure(tempPiece, x, i);
 				this->board.setFigure(king, kingX, kingY);
 				if (!isCheckAfterMove)
 				{
 					return false;
 				}
-				
+			}
+		}
+	}
+
+	// Check if any figure can block the checkmate
+	for (int i = 0; i < BOARD_SIZE; i++)
+	{
+		for (int x = 0; x < BOARD_SIZE; x++)
+		{
+			Figure* temp = this->board.getFigure(x, i);
+			if (temp->getColor() == color)
+			{
+				// Check all possible moves for the figure
+				for (int j = 0; j < BOARD_SIZE; j++)
+				{
+					for (int y = 0; y < BOARD_SIZE; y++)
+					{
+						Move to(Point(x, i), Point(y, j));
+						if (temp->canMove(this->board.getBoard(), to) && this->board.getFigure(y, j)->getColor() != color)
+						{
+							// Try out the move
+							Figure* tempPiece = this->board.getFigure(y, j);
+							this->board.setFigure(temp, y, j);
+							Figure* emptySlot = new EmptySlot();
+							this->board.setFigure(emptySlot, x, i);
+							bool isCheckAfterMove = checkCheck(color);
+							// Undo the move
+							this->board.setFigure(tempPiece, y, j);
+							this->board.setFigure(temp, x, i);
+							if (!isCheckAfterMove)
+							{
+								return false;
+							}
+						}
+					}
+				}
 			}
 		}
 	}
@@ -208,6 +236,8 @@ bool GameManager::checkCheckmate(const std::string& color)
 	// If no move can be made to get out of check, then it is checkmate
 	return true;
 }
+
+
 
 
 

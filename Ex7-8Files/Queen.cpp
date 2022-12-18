@@ -12,7 +12,6 @@ bool Queen::canMove(Figure* (board)[BOARD_SIZE][BOARD_SIZE], const Move& move) c
     int dirX = (deltaX > 0) ? -1 : 1;
     int dirY = (deltaY > 0) ? -1 : 1;
     bool canMove = true;
-    
 
     if (!(srcX != destX && srcY != destY))
     {
