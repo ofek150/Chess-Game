@@ -15,21 +15,21 @@ Board::~Board() // DTOR
 	}
 }
 
-Figure* Board::getFigure(int x, int y) // Returns figure in pos [y][x]
+Figure* Board::getFigure(int x, int y) // Returns figure in pos [x][y]
 {
 	return this->board[y][x];
 }
 
-Figure* (&Board::getBoard())[BOARD_SIZE][BOARD_SIZE]
+Figure* (&Board::getBoard())[BOARD_SIZE][BOARD_SIZE] // Returns the board
 {
 	return this->board;
 }
-void Board::setFigure(Figure* figure, int x, int y)
+void Board::setFigure(Figure* figure, int x, int y) // Sets the figure in pos [x][y]
 {
 	this->board[y][x] = figure;
 }
 
-void Board::stringToBoard(std::string board) // composes the board string for the pipe
+void Board::stringToBoard(std::string board) // Parses the string board
 {
 	for (int i = 0; i < BOARD_SIZE; i++)
 	{
