@@ -12,7 +12,6 @@ bool Queen::canMove(Figure* (board)[BOARD_SIZE][BOARD_SIZE], const Move& move) c
     int dirX = (deltaX > 0) ? -1 : 1;
     int dirY = (deltaY > 0) ? -1 : 1;
     bool canMove = true;
-    
 
     if (!(srcX != destX && srcY != destY))
     {
@@ -67,5 +66,28 @@ bool Queen::canMove(Figure* (board)[BOARD_SIZE][BOARD_SIZE], const Move& move) c
         }
         return true;
     }
+
+    /*else if (abs(deltaX) == abs(deltaY))
+    {
+        int x = srcX;
+        int y = srcY;
+        while (x != destX || y != destY)
+        {
+            x += dx;
+            y += dy;
+
+            if (x < 0 || x >= BOARD_SIZE || y < 0 || y >= BOARD_SIZE)
+            {
+                return false;
+            }
+
+            if (board[y][x]->getType() != "EmptySlot" && x != destX && y != destY)
+            {
+                return false;
+            }
+        }
+    }*/
+
+
     return false;
 }
