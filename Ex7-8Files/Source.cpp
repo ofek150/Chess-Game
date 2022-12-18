@@ -9,6 +9,8 @@ in order to read and write information from and to the Backend
 #include <thread>
 #include "GameManager.h"
 
+
+
 using std::cout;
 using std::endl;
 using std::string;
@@ -16,8 +18,9 @@ using std::string;
 
 void main()
 {
+	
 	srand(time_t(NULL));
-
+	
 	
 	Pipe p;
 	bool isConnect = p.connect();
@@ -78,6 +81,5 @@ void main()
 		// get message from graphics
 		msgFromGraphics = p.getMessageFromGraphics();
 	}
-
 	p.close();
 }
