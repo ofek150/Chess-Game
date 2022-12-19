@@ -273,22 +273,49 @@ namespace chessGraphics
 
                     string res = convertEngineToText(m);
 
-                    if (res.ToLower().StartsWith("game over"))
-                    {
-                        isGameOver = true;
-                    }
-                    else if (res.ToLower().StartsWith("valid"))
-                    {
-                        isCurPlWhite = !isCurPlWhite;
-                        lblCurrentPlayer.Text = isCurPlWhite ? "White" : "Black";
+                     /*if (res.ToLower().StartsWith("game over"))
+                     {
+                         isGameOver = true;
+                     }
+                     else if (res.ToLower().StartsWith("valid"))
+                     {
+                         isCurPlWhite = !isCurPlWhite;
+                         lblCurrentPlayer.Text = isCurPlWhite ? "White" : "Black";
 
-                        matBoard[dstSquare.Row, dstSquare.Col].BackgroundImage = matBoard[srcSquare.Row, srcSquare.Col].BackgroundImage;
-                        matBoard[srcSquare.Row, srcSquare.Col].BackgroundImage = null;
+                         matBoard[dstSquare.Row, dstSquare.Col].BackgroundImage = matBoard[srcSquare.Row, srcSquare.Col].BackgroundImage;
+                         matBoard[srcSquare.Row, srcSquare.Col].BackgroundImage = null;
 
-                        matBoard[srcSquare.Row, srcSquare.Col].FlatAppearance.BorderColor = Color.Blue;
-                        matBoard[dstSquare.Row, dstSquare.Col].FlatAppearance.BorderColor = Color.Blue;
-                    
-                    }
+                         matBoard[srcSquare.Row, srcSquare.Col].FlatAppearance.BorderColor = Color.Blue;
+                         matBoard[dstSquare.Row, dstSquare.Col].FlatAppearance.BorderColor = Color.Blue;
+
+                     }*/
+
+                     if (res.ToLower().StartsWith("game over"))
+                     {
+                         isCurPlWhite = !isCurPlWhite;
+                         lblCurrentPlayer.Text = isCurPlWhite ? "White" : "Black";
+
+                         matBoard[dstSquare.Row, dstSquare.Col].BackgroundImage = matBoard[srcSquare.Row, srcSquare.Col].BackgroundImage;
+                         matBoard[srcSquare.Row, srcSquare.Col].BackgroundImage = null;
+
+                         matBoard[srcSquare.Row, srcSquare.Col].FlatAppearance.BorderColor = Color.Blue;
+                         matBoard[dstSquare.Row, dstSquare.Col].FlatAppearance.BorderColor = Color.Blue;
+                         isGameOver = true;
+
+                     }
+
+                     else if (res.ToLower().StartsWith("valid"))
+                     {
+                         isCurPlWhite = !isCurPlWhite;
+                         lblCurrentPlayer.Text = isCurPlWhite ? "White" : "Black";
+
+                         matBoard[dstSquare.Row, dstSquare.Col].BackgroundImage = matBoard[srcSquare.Row, srcSquare.Col].BackgroundImage;
+                         matBoard[srcSquare.Row, srcSquare.Col].BackgroundImage = null;
+
+                         matBoard[srcSquare.Row, srcSquare.Col].FlatAppearance.BorderColor = Color.Blue;
+                         matBoard[dstSquare.Row, dstSquare.Col].FlatAppearance.BorderColor = Color.Blue;
+
+                     }
 
                     lblEngineCalc.Visible = false;
                     lblResult.Text = string.Format("{0}", res);
