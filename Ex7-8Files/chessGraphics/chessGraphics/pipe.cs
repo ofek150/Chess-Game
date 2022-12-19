@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO.Pipes;
 using System.IO;
 using System.Threading;
+using System.Media;
 
 
 namespace chessGraphics
@@ -24,7 +25,12 @@ namespace chessGraphics
             pipeServer =
                 new NamedPipeServerStream("chessPipe", PipeDirection.InOut, 1);
             ss = new StreamString(pipeServer);
-       
+
+            SoundPlayer player = new SoundPlayer();
+            player.SoundLocation = "background_music.wav";
+            player.Load();
+            player.PlayLooping();
+
 
         }
 
