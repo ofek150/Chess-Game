@@ -1,7 +1,8 @@
 # Chess Game (Magshimim Project)
 
 This project is an interactive chess game developed as part of the Magshimim program. It was collaboratively created by a duo, leveraging C# for the client-side interface and C++ for the server-side functionality. The game establishes a seamless connection between the client and server using pipes.
-Features
+
+## Features
 
     Interactive chess game: Play a game of chess against another player.
     Client-side interface: The client-side interface is developed using C# to provide a user-friendly and visually appealing experience.
