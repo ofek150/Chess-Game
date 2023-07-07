@@ -17,29 +17,27 @@ This project is an interactive chess game developed as part of the Magshimim pro
 
 To get started with the chess game project, follow these steps:
 
-    Clone the repository:
+1. **Clone the repository**:
 
-    bash
+        git clone <repository-url>
 
-    git clone <repository-url>
-
-    Build the server-side code:
+2. **Build the server-side code**:
         Open the server-side project(chess-proj folder) in a C++ development environment (e.g., Visual Studio).
         Build the solution to compile the server code.
 
-    Build the client-side code:
+3. **Build the client-side code**:
         Open the client-side project(chessGraphics) in a C# development environment (e.g., Visual Studio).
         Build the solution to compile the client code.
 
-    Start the server:
+4. **Start the server**:
         Run the compiled server application to start the server.
         The server will listen for incoming connections from clients.
 
-    Start the client:
+5. **Start the client**:
         Run the compiled client application to start the client.
         The client will establish a connection with the server.
 
-    Play the game:
+ 6. **Play the game**:
         Once the client is connected to the server, you can start playing the chess game.
         Follow the on-screen instructions and use the provided user interface to make moves.
 
