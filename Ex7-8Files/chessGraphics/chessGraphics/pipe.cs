@@ -1,16 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO.Pipes;
 using System.IO;
-using System.Threading;
-using System.Media;
 
 
 namespace chessGraphics
@@ -25,13 +16,6 @@ namespace chessGraphics
             pipeServer =
                 new NamedPipeServerStream("chessPipe", PipeDirection.InOut, 1);
             ss = new StreamString(pipeServer);
-
-            SoundPlayer player = new SoundPlayer();
-            player.SoundLocation = "background_music.wav";
-            player.Load();
-            player.PlayLooping();
-
-
         }
 
         public bool connect()
