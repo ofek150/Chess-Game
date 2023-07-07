@@ -3,10 +3,15 @@
 This project is an interactive chess game developed as part of the Magshimim program. It was collaboratively created by a duo, leveraging C# for the client-side interface and C++ for the server-side functionality. The game establishes a seamless connection between the client and server using pipes.
 
 ## Features
-* Interactive chess game: Play a game of chess against another player.
-* Client-side interface: The client-side interface is developed using C# to provide a user-friendly and visually appealing experience.
-* Server-side functionality: The server-side functionality is implemented in C++ to handle game logic, move validation, and communication with the clients.
-* Seamless client-server connection: The client and server communicate with each other using pipes, ensuring a smooth and efficient exchange of data.
+* Full implementation of chess rules and game mechanics: The game includes all standard chess rules and mechanics, allowing players to experience the authentic gameplay.
+    Two-player mode for local multiplayer: Play against another player locally, taking turns on the same device. Enjoy the competitive spirit and strategic challenges of chess.
+* Interactive GUI interface for easy gameplay: The graphical user interface (GUI) provides an intuitive and user-friendly environment for players to make moves and interact with the game. It enhances the overall gameplay experience.
+* Error handling and validation for user moves: The game incorporates error handling and move validation mechanisms to ensure that players adhere to the rules of chess. It prevents invalid moves and provides feedback to guide players.
+* Win condition detection and game over state: The game detects win conditions, such as checkmate or stalemate, and triggers the game over state accordingly. Players are notified of the outcome and can start a new game or exit.
+* Young Dvir Profus as a pawn (A friend of ours)
+
+## Screenshots
+![screenshot](IngameScreenshot.png)
 
 ## Getting Started
 
@@ -19,11 +24,11 @@ To get started with the chess game project, follow these steps:
     git clone <repository-url>
 
     Build the server-side code:
-        Open the server-side project in a C++ development environment (e.g., Visual Studio).
+        Open the server-side project(chess-proj folder) in a C++ development environment (e.g., Visual Studio).
         Build the solution to compile the server code.
 
     Build the client-side code:
-        Open the client-side project in a C# development environment (e.g., Visual Studio).
+        Open the client-side project(chessGraphics) in a C# development environment (e.g., Visual Studio).
         Build the solution to compile the client code.
 
     Start the server:
@@ -53,9 +58,10 @@ Please ensure that you have the necessary development environments and tools ins
 The project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute the code as per the terms of the license.
 Contact
 
-If you have any questions, suggestions, or feedback, please feel free to contact us:
-
-    Your Name: ofek080306@gmail.com
-    Collaborator's Name: Ofek Ifrah
+## Contact Us
+* Ofek Ifrah:
+    * ofek080306@gmail.com
+* Daniel Mordukhovich:
+    * daniel.mordo06@gmail.com
 
 We appreciate your interest in the chess game project!
