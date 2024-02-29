@@ -1,4 +1,4 @@
-# Chess Game (Magshimim Project)
+# Chess Game (2nd Year Magshimim Project)
 
 This project is an interactive chess game developed as part of the Magshimim program. It was collaboratively created by a duo, leveraging C# for the client-side interface and C++ for the server-side functionality. The game establishes a seamless connection between the client and server using pipes.
 
@@ -13,53 +13,6 @@ This project is an interactive chess game developed as part of the Magshimim pro
 ## Screenshots
 ![screenshot](IngameScreenshot.png)
 
-## Getting Started
-
-To get started with the chess game project, follow these steps:
-
-1. **Clone the repository**:
-
-        git clone <repository-url>
-
-2. **Build the server-side code**:
-        Open the server-side project(chess-proj folder) in a C++ development environment (e.g., Visual Studio).
-        Build the solution to compile the server code.
-
-3. **Build the client-side code**:
-        Open the client-side project(chessGraphics) in a C# development environment (e.g., Visual Studio).
-        Build the solution to compile the client code.
-
-4. **Start the server**:
-        Run the compiled server application to start the server.
-        The server will listen for incoming connections from clients.
-
-5. **Start the client**:
-        Run the compiled client application to start the client.
-        The client will establish a connection with the server.
-
- 6. **Play the game**:
-        Once the client is connected to the server, you can start playing the chess game.
-        Follow the on-screen instructions and use the provided user interface to make moves.
-
-## Dependencies
-
-The project has the following dependencies:
-
-    C# development environment (e.g., Visual Studio)
-    C++ development environment (e.g., Visual Studio)
-    Git (for cloning the repository)
-
-Please ensure that you have the necessary development environments and tools installed before proceeding.
-
 ## License
 
 The project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute the code as per the terms of the license.
-Contact
-
-## Contact Us
-* Ofek Ifrah:
-    * ofek080306@gmail.com
-* Daniel Mordukhovich:
-    * daniel.mordo06@gmail.com
-
-We appreciate your interest in the chess game project!
